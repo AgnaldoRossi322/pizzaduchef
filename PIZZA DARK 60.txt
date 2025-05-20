@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Pizzas Grandes + Coca 3L Grátis por R$59,99 | Pizza Du Chef</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        .bg-pizza-hero {
+            background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .flavor-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .sticky-order-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+        }
+        .pizza-card {
+            transition: all 0.3s ease;
+        }
+        .pizza-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Sticky Order Button -->
+    <a href="#order-section" class="sticky-order-btn bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full shadow-lg pulse hidden md:block">
+        <i class="fas fa-pizza-slice mr-2"></i> Quero minhas pizzas agora!
+    </a>
+
+    <!-- Hero Section -->
+    <section class="bg-red-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="bg-pizza-hero absolute inset-0"></div>
+        
+        <div class="container mx-auto px-4 py-16 md:py-24 relative z-20">
+            <!-- Logo -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-white text-red-600 font-bold text-3xl px-6 py-3 rounded-full inline-flex items-center">
+                    <i class="fas fa-pizza-slice mr-2"></i>
+                    PIZZA DU CHEF
+                </div>
+            </div>
+            
+            <!-- Main Offer -->
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                    3 PIZZAS GRANDES<br>
+                    <span class="text-yellow-300">+ COCA 3L GRÁTIS</span><br>
+                    por apenas R$59,99!
+                </h1>
+                
+                <p class="text-xl md:text-2xl mb-8">
+                    Escolha seus sabores, monte seu pedido e receba em casa com entrega grátis!
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <div class="flex items-center bg-white/20 px-4 py-2 rounded-full">
+                        <i class="fas fa-truck mr-2"></i> Entrega grátis
+                    </div>
+                    <div class="flex items-center bg-white/20 px-4 py-2 rounded-full">
+                        <i class="fas fa-gift mr-2"></i> Coca 3L de brinde
+                    </div>
+                    <div class="flex items-center bg-white/20 px-4 py-2 rounded-full">
+                        <i class="fas fa-bolt mr-2"></i> Pedido em menos de 1 minuto
+                    </div>
+                </div>
+                
+                <!-- Countdown -->
+                <div class="bg-black/40 px-6 py-3 rounded-full inline-block mb-8">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-clock text-yellow-300 mr-2"></i>
+                        <span class="font-bold">Você tem <span id="countdown" class="text-yellow-300">09:59</span> para garantir sua Coca 3L grátis!</span>
+                    </div>
+                </div>
+                
+                <a href="#order-section" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-red-600 font-bold py-4 px-8 rounded-xl text-xl shadow-lg pulse">
+                    <i class="fas fa-pizza-slice mr-2"></i> MONTAR MEU PEDIDO
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Pizzas Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-red-600 mb-2">
+                    <i class="fas fa-utensils mr-2"></i> NOSSAS PIZZAS
+                </h2>
+                <p class="text-gray-600">Escolha entre nossos sabores incríveis</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Pizza 1 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Calabresa" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Calabresa</h3>
+                        <p class="text-gray-600 text-sm">Molho, mussarela e calabresa</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 2 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mussarela" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Mussarela</h3>
+                        <p class="text-gray-600 text-sm">Molho e muito queijo</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 3 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Frango c/ Catupiry" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Frango c/ Catupiry</h3>
+                        <p class="text-gray-600 text-sm">Frango desfiado e catupiry</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 4 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1681567604770-0dc826c870ae?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portuguesa" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Portuguesa</h3>
+                        <p class="text-gray-600 text-sm">Ovos, presunto, ervilha e mais</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 5 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1620374645498-af6bd681a0bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="4 Queijos" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">4 Queijos</h3>
+                        <p class="text-gray-600 text-sm">Mussarela, gorgonzola, parmesão e catupiry</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 6 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1722707757608-7da361644637?q=80&w=1869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bacon c/ Cheddar" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Bacon c/ Cheddar</h3>
+                        <p class="text-gray-600 text-sm">Bacon crocante e cheddar derretido</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 7 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Marguerita" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Marguerita</h3>
+                        <p class="text-gray-600 text-sm">Tomate, mussarela e manjericão</p>
+                    </div>
+                </div>
+                
+                <!-- Pizza 8 -->
+                <div class="pizza-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1571066811602-716837d681de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Chocolate" class="w-full h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="font-bold text-lg">Chocolate</h3>
+                        <p class="text-gray-600 text-sm">Chocolate ao leite com morango</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order-section" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-red-600 mb-2">
+                    <i class="fas fa-shopping-cart mr-2"></i> MONTE SEU PEDIDO
+                </h2>
+                <p class="text-gray-600">Escolha seus sabores preferidos abaixo</p>
+            </div>
+            
+            <!-- Pizza Selection -->
+            <div class="mb-12 bg-white p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">
+                    <i class="fas fa-pizza-slice mr-2 text-red-600"></i> Escolha os sabores das suas 2 pizzas:
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Pizza 1 -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <label class="block text-lg font-bold mb-4 text-red-600">
+                            Pizza 1
+                        </label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-700">
+                            <option value="">Selecione um sabor</option>
+                            <option value="calabresa">Calabresa</option>
+                            <option value="mussarela">Mussarela</option>
+                            <option value="frango">Frango com Catupiry</option>
+                            <option value="portuguesa">Portuguesa</option>
+                            <option value="marguerita">Marguerita</option>
+                            <option value="4queijos">4 Queijos</option>
+                            <option value="bacon">Bacon c/ Cheddar</option>
+                            <option value="napolitana">Napolitana</option>
+                            <option value="baiana">Baiana</option>
+                            <option value="chocolate">Chocolate com morango</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Pizza 2 -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <label class="block text-lg font-bold mb-4 text-red-600">
+                            Pizza 2
+                        </label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-700">
+                            <option value="">Selecione um sabor</option>
+                            <option value="calabresa">Calabresa</option>
+                            <option value="mussarela">Mussarela</option>
+                            <option value="frango">Frango com Catupiry</option>
+                            <option value="portuguesa">Portuguesa</option>
+                            <option value="marguerita">Marguerita</option>
+                            <option value="4queijos">4 Queijos</option>
+                            <option value="bacon">Bacon c/ Cheddar</option>
+                            <option value="napolitana">Napolitana</option>
+                            <option value="baiana">Baiana</option>
+                            <option value="chocolate">Chocolate com morango</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drink Selection -->
+            <div class="mb-12 bg-white p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">
+                    <i class="fas fa-glass-whiskey mr-2 text-red-600"></i> Escolha sua bebida
+                </h3>
+                <p class="text-gray-600 mb-4">Você já ganha uma Coca-Cola 3L grátis! Mas se quiser trocar, escolha abaixo:</p>
+                
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-700">
+                    <option value="coca">Coca-Cola 3L (grátis)</option>
+                    <option value="pepsi">Pepsi 2L</option>
+                    <option value="fanta">Fanta Laranja 2L</option>
+                    <option value="fanta-uva">Fanta Uva 2L</option>
+                    <option value="guarana">Guaraná Antarctica 2L</option>
+                    <option value="agua-g">Água com gás 1,5L</option>
+                    <option value="agua-sg">Água sem gás 1,5L</option>
+                </select>
+            </div>
+            
+            <!-- Special Instructions -->
+            <div class="mb-12 bg-white p-6 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">
+                    <i class="fas fa-edit mr-2 text-red-600"></i> Observações
+                </h3>
+                <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-gray-700" rows="3" placeholder="Deseja deixar alguma observação? (Ex: sem cebola, cortar em 8, borda recheada, etc.)"></textarea>
+            </div>
+            
+            <!-- Order Summary -->
+            <div class="bg-red-600 text-white p-6 rounded-xl mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h3 class="font-bold text-lg">Resumo do Pedido</h3>
+                        <p> 3 Pizzas Grandes + Bebida Grátis</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-red-200 line-through">R$89,90</div>
+                        <div class="text-2xl font-bold">R$59,99</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center text-yellow-300">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>Entrega grátis válida somente hoje</span>
+                </div>
+            </div>
+            
+            <!-- Checkout Button -->
+            <div class="text-center">
+                <p class="text-gray-600 mb-4">
+                    <i class="fas fa-fire mr-2"></i> Já saíram 58 pedidos!
+                </p>
+                
+                <a href="https://seudominio.com/checkout" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-lg pulse">
+                    <i class="fas fa-lock mr-2"></i> FINALIZAR PEDIDO E IR PARA O PAGAMENTO
+                </a>
+                
+                <p class="mt-4 text-sm text-gray-500">
+                    <i class="fas fa-info-circle mr-1"></i> Você será redirecionado para a página de pagamento e preenchimento dos seu endereço!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <div class="text-red-600 text-3xl mb-2">
+                    <i class="fas fa-pizza-slice"></i>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">PIZZA DU CHEF</h2>
+                <p>A melhor pizza da cidade, entregue rapidamente na sua porta!</p>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-gray-400 text-sm">
+                <p>© 2023 Pizza Du Chef - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            let hours = 23 - now.getHours();
+            let minutes = 59 - now.getMinutes();
+            
+            // Adjust for single digit display
+            if(hours < 10) hours = "0" + hours;
+            if(minutes < 10) minutes = "0" + minutes;
+            
+            document.getElementById('countdown').textContent = `${hours}:${minutes}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Show sticky button on scroll
+        window.addEventListener('scroll', function() {
+            const stickyBtn = document.querySelector('.sticky-order-btn');
+            if (window.scrollY > 300) {
+                stickyBtn.classList.remove('hidden');
+            } else {
+                stickyBtn.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
